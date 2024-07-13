@@ -7,9 +7,10 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit';
 import { SaleInfo, Header, CustomerName, BilledDate, Controls, ExpandButton, AdditionalInfo } from './Sale.style';
-import NewSaleField from '../Shared/Components/NewSalesField';
-import CollapsibleTable from '../Sales/Sales';
-import SalesDetails from '../Sales/SalesNew';
+import NewSaleField from '../Shared/Components/NewWeightField';
+import CollapsibleTable from '../Sales/NotUsingSales';
+import CustomerSalesDetails from '../Sales/CustomerSalesDetails';
+import EditSales from './EditSales/EditSales';
 
 
 
@@ -47,35 +48,10 @@ const Alarm: React.FC<AlarmProps> = ({ customerName, schedule, enabled }) => {
         <AdditionalInfo>
 
 {
-true && <SalesDetails />
+true && <CustomerSalesDetails />
 
 }
-          {
-            true && 
-            <>
-            <Box className="new-weight-container">
-            <Button variant="outlined" startIcon={<AddCircleIcon />}>
-              Add New Weight
-            </Button>
-            <div>
-              <NewSaleField />
-              <NewSaleField />
-            </div>
-          </Box>
-          <Box className="old-weight-container">
-            <Button className='add-old-weight' variant="outlined" startIcon={<AddCircleIcon />}>
-              Add Old Weight
-            </Button>
-            <div>
-              <NewSaleField />
-              <NewSaleField />
-              <NewSaleField />
-              <NewSaleField />
-            </div>
-          </Box>
-            </>
-
-          }
+         
           
         </AdditionalInfo>
       )}
